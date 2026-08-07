@@ -3,7 +3,7 @@
 > Ecosistema de desarrollo autónomo para OpenCode.
 > **Refiner** entiende la intención del usuario, la clarifica y coordina el análisis.
 > **North** es el cerebro: recibe la acción pulida y delega a sus manos.
-> **Boehmio** abre la cabeza, **Realistic** baja a tierra, **Executor** ejecuta, **Auditor** verifica, **Especialista** aporta conocimiento experto.
+> **Boehmio** abre la cabeza, **Realistic** baja a tierra, **Executor** ejecuta, **Auditor** verifica, **Especialista-Bibliotecario** aporta conocimiento experto y custodia la biblioteca.
 > Publicable, clonable, mantenible.
 
 <!-- CRISOL-REFINER — ARCHIVO DEL ECOSISTEMA. NO MODIFICAR AUTOMÁTICAMENTE. -->
@@ -49,13 +49,12 @@ MCPs configurados en `opencode.json` además del `seq-thinking` nativo.
 | Agente | Modo | Rol |
 |---|---|---|
 | `Refiner` | primary | Puerta de entrada. Entiende, refina, clarifica la intención del user, coordina análisis, es la voz de North. |
-| `Bibliotecario` | primary | Custodio del conocimiento. **Mock — por ahora no se usa.** |
 | `North` | subagent | El cerebro. Recibe la acción pulida de Refiner, la comprende y delega. |
 | `Boehmio` | subagent | Creativo. Analiza ideas, abre la cabeza. Lo consulta Refiner. |
 | `Realistic` | subagent | Realista. Baja a tierra, valida, puntúa 1-10. Lo consulta Refiner. |
 | `Executor` | subagent | La mano de North. Ejecuta. |
 | `Auditor` | subagent | Verifica que lo ejecutado esté perfecto. |
-| `Especialista` | subagent | Experto senior bajo demanda, consulta conocimiento. |
+| `Especialista-Bibliotecario` | subagent | Experto senior bajo demanda + custodio del conocimiento. North lo consulta; si falta saber, investiga y cura el dominio. |
 
 ### Filosofía
 
@@ -65,8 +64,7 @@ North = el cerebro (recibe, comprende, delega)
 Boehmio / Realistic = análisis previo del triángulo
 Executor = operación
 Auditor = control
-Especialista = conocimiento experto bajo demand
-Bibliotecario = custodia del conocimiento (pendiente)
+Especialista-Bibliotecario = conocimiento experto + custodia del conocimiento (consulta, investiga y cura)
 Domains = qué saber (pasivo, consultable bajo demanda)
 Context = estado del proyecto
 Memoria = buffer entre efímero y permanente
@@ -79,7 +77,7 @@ Memoria = buffer entre efímero y permanente
 3. Refiner presenta al usuario la opinión de ambos resumida; Realistic da el veredicto técnico (1-10); **Refiner da el veredicto final**
 4. **El usuario decide** pasar a acción o descartar/ajustar
 5. Solo si el usuario decide ejecutar → la acción pulida va a **North** (`task(North, ...)`)
-6. **North** la comprende y delega: **Executor** → **Auditor** → **Especialista**
+6. **North** la comprende y delega: **Executor** → **Auditor** → **Especialista-Bibliotecario** (cuando necesita conocimiento)
 7. North devuelve el resultado a Refiner, Refiner lo sintetiza al usuario
 
 ## Plugins disponibles (tools)

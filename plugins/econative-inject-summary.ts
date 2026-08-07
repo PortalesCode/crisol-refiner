@@ -3,7 +3,7 @@
  *
  * Inyecta un resumen compacto de tools, skills y reglas del ecosistema
  * en el system prompt de CADA request. Así CADA agente del ecosistema
- * (Refinería, North, Executor, Auditor, Especialista) SIEMPRE ve qué tiene
+ * (Refinería, North, Executor, Auditor, Especialista-Bibliotecario) SIEMPRE ve qué tiene
  * disponible sin depender de AGENTS.md ni de "acordarse" de buscar.
  *
  * Inspirado en Engram (global) que usa el mismo hook para inyectar
@@ -19,7 +19,7 @@ const ECO_SUMMARY = `## 🧭 Jerarquía (arquitectura actual)
 El usuario habla con Refinería (primaria): entiende, refina y clarifica la
 intención, y coordina el análisis previo. El usuario decide si pasar a acción o descartar.
 Si hay acción, esa intención pulida va a North (el cerebro) que la comprende y delega
-a sus manos: Executor (ejecuta) → Auditor (verifica) → Especialista (experto senior bajo demanda).
+a sus manos: Executor (ejecuta) → Auditor (verifica) → Especialista-Bibliotecario (experto senior + custodia del conocimiento).
 Los subagentes reportan de vuelta a North, y North devuelve el resultado a Refinería.
 
 ## 📋 Tools del Ecosistema
