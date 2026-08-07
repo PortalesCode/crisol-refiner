@@ -1,13 +1,13 @@
 ---
 name: econative-architecture-review
-description: Usá esta skill para evaluar arquitectura, componentes, límites, acoplamiento, flujo de datos, impacto de cambios y escalabilidad. North la aplica antes de planificar cambios grandes.
+description: Usá esta skill para evaluar arquitectura, componentes, límites, acoplamiento, flujo de datos, impacto de cambios y escalabilidad. Especialista-Bibliotecario la usa cuando North le pide criterio experto de arquitectura o diseño.
 ---
 
 # Architecture Review
 
 ## Cuándo usarla
 
-North necesita evaluar el impacto de un cambio, revisar si la arquitectura actual soporta lo que pide el usuario, o decidir entre enfoques.
+Especialista-Bibliotecario evalúa el impacto cuando North le consulta: revisa si la arquitectura actual soporta lo que pide el usuario, o aporta criterio experto para decidir entre enfoques. No planifica ni ejecuta — su rol es aportar criterio experto de arquitectura o diseño.
 
 ## Dimensiones a evaluar
 

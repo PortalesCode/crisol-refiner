@@ -1,9 +1,9 @@
 ---
 name: econative-curacion-dominios
-description: Usá esta skill cuando necesites crear, expandir o refinar un dominio de conocimiento en workspec/domains/. North la usa activamente cuando detecta gaps recurrentes de información.
+description: Usá esta skill cuando necesites crear, expandir o refinar un dominio de conocimiento en workspec/domains/. Especialista-Bibliotecario la usa cuando North le consulta y falta conocimiento: investiga, escribe y verifica dominios.
 ---
 
-# Curación de Dominios — Crisol-Eco
+# Curación de Dominios — Crisol-Refiner
 
 ## Cuándo usarla
 

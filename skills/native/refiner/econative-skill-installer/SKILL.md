@@ -1,6 +1,6 @@
 ---
 name: econative-skill-installer
-description: Instala skills bajo demanda desde un repositorio remoto. North la usa cuando detecta que una skill externa es necesaria para la tarea actual. No descarga todo el catálogo, solo la skill específica.
+description: Instala skills bajo demanda desde un repositorio remoto. Refiner la usa cuando detecta que una skill externa es necesaria para la tarea actual. No descarga todo el catálogo, solo la skill específica.
 ---
 
 # Skill Installer
@@ -13,7 +13,7 @@ description: Instala skills bajo demanda desde un repositorio remoto. North la u
 
 ## Pipeline
 
-### 1. North detecta necesidad
+### 1. Refiner detecta necesidad
 - Analiza el contexto del proyecto (stack, tarea, requerimiento)
 - Determina qué skill externa se necesita
 - Verifica si ya está instalada en `.opencode/skills/extern/<skill>/`
@@ -44,10 +44,10 @@ description: Instala skills bajo demanda desde un repositorio remoto. North la u
 
 1. NO instalar skills que ya están en `skills/extern/`
 2. NO descargar el catálogo completo
-3. Si la descarga falla, North informa al usuario y continúa sin la skill
-4. Si la skill remota no existe en el index, North informa y no crea archivos vacíos
+3. Si la descarga falla, Refiner informa al usuario y continúa sin la skill
+4. Si la skill remota no existe en el index, Refiner informa y no crea archivos vacíos
 5. La URL del registro se lee de `workspec/context/SKILL-REGISTRY.md`, no está hardcodeada
-6. **Las skills instaladas NO están disponibles hasta reiniciar OpenCode.** Después de instalar, North informa al usuario: "Skill instalada. Necesitás reiniciar OpenCode para que esté disponible."
+6. **Las skills instaladas NO están disponibles hasta reiniciar OpenCode.** Después de instalar, Refiner informa al usuario: "Skill instalada. Necesitás reiniciar OpenCode para que esté disponible."
 7. **Siempre actualizar AGENTS.md** después de instalar o actualizar una skill. Si AGENTS.md no refleja las skills instaladas, los agentes no saben que existen.
 
 ## Formato del repositorio remoto

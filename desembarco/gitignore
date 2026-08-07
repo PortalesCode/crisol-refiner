@@ -1,4 +1,4 @@
-# Crisol-Eco — .gitignore refinado
+# Crisol-Refiner — .gitignore refinado
 #
 # Ignoramos solo lo transitorio. .opencode/ viaja con el proyecto.
 
@@ -7,7 +7,7 @@ node_modules/
 .opencode/node_modules/
 
 # workspec/ entero — los plugins crean todo sobre la marcha
-# ⚠️ Si usás Crisol-Eco como template para tu proyecto,
+# ⚠️ Si usás Crisol-Refiner como template para tu proyecto,
 #    comentá o quitá esta línea para trackear tu workspec/.
 workspec/
 

@@ -3,7 +3,7 @@
  *
  * Inyecta un resumen compacto de tools, skills y reglas del ecosistema
  * en el system prompt de CADA request. Así CADA agente del ecosistema
- * (Refinería, North, Executor, Auditor, Especialista-Bibliotecario) SIEMPRE ve qué tiene
+ * (Refiner, North, Boehmio, Realistic, Executor, Auditor, Especialista-Bibliotecario) SIEMPRE ve qué tiene
  * disponible sin depender de AGENTS.md ni de "acordarse" de buscar.
  *
  * Inspirado en Engram (global) que usa el mismo hook para inyectar
@@ -16,15 +16,20 @@ import type { Plugin } from "@opencode-ai/plugin";
 
 const ECO_SUMMARY = `## 🧭 Jerarquía (arquitectura actual)
 
-El usuario habla con Refinería (primaria): entiende, refina y clarifica la
-intención, y coordina el análisis previo. El usuario decide si pasar a acción o descartar.
-Si hay acción, esa intención pulida va a North (el cerebro) que la comprende y delega
-a sus manos: Executor (ejecuta) → Auditor (verifica) → Especialista-Bibliotecario (experto senior + custodia del conocimiento).
-Los subagentes reportan de vuelta a North, y North devuelve el resultado a Refinería.
+El usuario habla con Refiner (primaria): puerta de entrada que entiende, refina y clarifica la
+intención, coordina el triángulo Boehmio+Realistic, es la voz de North y traduce de ida y vuelta.
+Para ideas grandes o abiertas, Refiner consulta el triángulo: Boehmio (creativo) + Realistic (realista, puntúa 1-10).
+El usuario decide si pasar a acción o descartar.
+Solo con la acción confirmada, esa intención pulida va a North (el cerebro) que la comprende y delega
+a sus manos SEGÚN COMPLEJIDAD: Executor (ejecuta) → Auditor (verifica), y cuando necesita criterio
+experto o conocimiento consulta a Especialista-Bibliotecario (experto senior + custodia del conocimiento, \
+antes o durante, no necesariamente después).
+Los subagentes reportan de vuelta a North, y North devuelve el resultado a Refiner.
 
 ## 📋 Tools del Ecosistema
 
 econative_start_session — Inicio obligatorio: contexto + plan + stack + prefs, auto-crea plan.md si no existe
+econative_plan — Tool única para gestionar el plan (design/start/close/status/archive)
 econative_context_read — Leer contexto (PROJECT, CONVENTIONS, ARCHITECTURE, STATUS, SKILL-REGISTRY, etc)
 econative_plan_read — Consultar plan activo (workspec/plans/active/plan.md)
 econative_plan_sync — Sincronizar todowrite ↔ plan.md
@@ -35,8 +40,6 @@ econative_stack_snapshot — Escanear stack del proyecto
 econative_remember_it — Guardar descubrimiento en memoria compartida
 econative_remember_list — Listar descubrimientos (metadata)
 econative_remember_show — Leer descubrimiento completo
-econative_task_init — Iniciar tarea: marca 🔵 en plan.md con timestamp de creación
-econative_task_closeout — Cerrar tarea: marca [x] con timestamp de cierre en plan.md
 econative_domain_list — Listar dominios de conocimiento
 econative_domain_reader — Leer dominio completo
 econative_domain_write — Crear o actualizar dominio

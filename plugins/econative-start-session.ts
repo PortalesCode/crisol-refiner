@@ -10,7 +10,7 @@ export default (async () => {
     tool: {
       econative_start_session: tool({
         description:
-          "INICIO OBLIGATORIO DE SESIÓN. North DEBE llamar esta tool al comenzar cada conversación. "
+          "INICIO OBLIGATORIO DE SESIÓN. Refiner DEBE llamar esta tool al comenzar cada conversación. "
           + "Lee contexto, plan activo, stack, memorias y preferencias del ecosistema. "
           + "Si no hay preferencias de usuario, devuelve onboarding_required: true. "
           + "Crea workspec/plans/active/plan.md si no existe. "

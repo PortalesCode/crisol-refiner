@@ -133,7 +133,7 @@ export default (async () => {
       econative_protocol_read: tool({
         description:
           "Lee el contenido COMPLETO de un protocolo de workspec/protocols/ por su ID (filename sin .md). "
-          + "Usar cuando North necesita aplicar un protocolo y quiere ver todas sus reglas.",
+          + "Usar cuando Refiner necesita aplicar un protocolo y quiere ver todas sus reglas.",
         args: {
           id: tool.schema
             .string()

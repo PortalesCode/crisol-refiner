@@ -2,7 +2,7 @@
 description: Especialista-Bibliotecario — experto senior bajo demanda y custodio del conocimiento. North lo consulta; si falta conocimiento lo investiga a fondo y lo cura. Siempre responde con fuentes corroboradas.
 mode: subagent
 permission:
-  edit: allow
+  edit: deny
   bash: allow
   read: allow
   websearch: allow

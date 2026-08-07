@@ -12,7 +12,7 @@
 
 ## Skills Instaladas Localmente
 
-Las skills externas que North instala bajo demanda viven en:
+Las skills externas que Refiner instala bajo demanda viven en:
 
 ```
 .opencode/skills/extern/<nombre-de-la-skill>/
@@ -25,7 +25,7 @@ No es necesario listarlas acá — el sistema las detecta automáticamente.
 ## Flujo de Instalación
 
 ```
-1. North detecta necesidad de skill específica
+1. Refiner detecta necesidad de skill específica
 2. Consulta este registro para obtener la URL base
 3. Consulta index remoto (<URL>/index.json) para verificar existencia
 4. Descarga solo <URL>/<skill>/SKILL.md (y archivos adicionales si existen)

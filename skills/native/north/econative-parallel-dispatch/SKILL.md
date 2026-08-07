@@ -7,7 +7,7 @@ description: Usá esta skill para detectar tareas independientes en un plan y la
 
 ## Cuándo usarla
 
-North ya tiene un plan descompuesto en tareas y detecta que algunas no tienen dependencias entre sí.
+North recibe una acción de Refiner; si la acción tiene partes independientes sin dependencias entre sí, decide si lanzar varios Executors en paralelo.
 
 ## Proceso
 

@@ -34,7 +34,7 @@ proyecto/
 ├── workspec/           ← Plan de trabajo y contexto
 │   ├── context/         ← Documentación del proyecto
 │   └── plans/           ← Planes activos e históricos
-└── .opencode/          ← Ecosistema Crisol-Eco
+└── .opencode/          ← Ecosistema Crisol-Refiner
 ```
 
 ---
@@ -47,8 +47,10 @@ _Pendiente de definir según lenguaje/framework._
 
 ## Workflow
 
-1. North planifica y descompone
-2. Executor implementa
-3. Auditor revisa (cuando corresponda)
-4. Se actualiza STATUS.md y plan.md
-5. Commit con conventional commit
+1. Refiner refina y clarifica la intención del user
+2. North comprende la acción pulida y delega
+3. Executor implementa
+4. Auditor revisa (cuando corresponda)
+5. Especialista-Bibliotecario aporta conocimiento experto (según complejidad)
+6. Se actualiza STATUS.md y plan.md
+7. Commit con conventional commit

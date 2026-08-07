@@ -1,14 +1,14 @@
 /**
  * econative-domain-writer.ts
  *
- * Crea o actualiza dominios en workspec/domains/ con el formato simple de Crisol-Eco:
+ * Crea o actualiza dominios en workspec/domains/ con el formato simple de Crisol-Refiner:
  *
  *   $$Título del Dominio$$
  *   &&Descripción breve&&
  *   [markdown libre]
  *
  * Complementa a econative_domain_list (leer lista) y econative_domain_reader (leer contenido).
- * Sin esta tool, North no podría escribir dominios.
+ * Sin esta tool, Especialista-Bibliotecario no podría escribir dominios.
  */
 
 import { writeFileSync, existsSync, mkdirSync } from "fs";
@@ -21,7 +21,7 @@ export default (async () => {
     tool: {
       econative_domain_write: tool({
         description:
-          "Crea o actualiza un dominio en workspec/domains/. Usa el formato simple de Crisol-Eco:\n"
+          "Crea o actualiza un dominio en workspec/domains/. Usa el formato simple de Crisol-Refiner:\n"
           + "  $$Título$$ (primera línea)\n"
           + "  &&Descripción&& (segunda línea)\n"
           + "  [markdown libre] (resto)\n"

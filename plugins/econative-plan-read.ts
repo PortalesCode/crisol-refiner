@@ -11,7 +11,7 @@ export default (async () => {
         description:
           "Lee el plan activo desde workspec/plans/active/plan.md y devuelve su contenido estructurado: "
           + "intención, fases con tareas y su estado, dependencias y notas. "
-          + "Útil para que North retome el plan entre sesiones o que el usuario consulte el estado.",
+          + "Útil para que Refiner retome el plan entre sesiones o que el usuario consulte el estado.",
         args: {},
         async execute(_args, context) {
           const planPath = join(context.directory, "workspec", "plans", "active", "plan.md");
@@ -20,7 +20,7 @@ export default (async () => {
             return JSON.stringify({
               ok: true,
               exists: false,
-              summary: "No hay un plan activo. North necesita preguntar la intención al usuario.",
+              summary: "No hay un plan activo. Refiner necesita preguntar la intención al usuario.",
             });
           }
 
