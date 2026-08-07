@@ -1,5 +1,15 @@
 # Crisol Refiner — Agentic Ecosystem for OpenCode
 
+## Install
+
+In the root of your project repo, clone the ecosystem into `.opencode/`:
+
+```bash
+git clone https://github.com/PortalesCode/crisol-refiner.git .opencode/
+```
+
+On the first `start_session`, Refiner lands the landing payload (`desembarco/`) and the ecosystem scaffolds the workspace. The clone brings its own `.opencode/.git` inside your project. If your work repo is itself a git root, decide whether to track the ecosystem checkout as a submodule or keep it untracked/gitignored, so the two git histories do not interfere.
+
 Agentic development ecosystem for OpenCode. Refiner (primary) is the entry
 point: it refines/clarifies user intent, coordinates the creative triangle, and
 translates between the user and the technical agents. North (subagent) is the
